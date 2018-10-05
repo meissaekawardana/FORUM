@@ -37,11 +37,59 @@
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Nama harus diisi !!">
 						<span class="label-input100">Nama</span>
 						<input class="input100" type="text" placeholder="Masukan Nama Lengkap" id="nama" name="nama">
-
-						<span class="focus-input100" data-symbol="&#xf206;"></span>
+						<span class="focus-input100" data-symbol="&#10065;"></span>
 					</div>
 
-          <div class="wrap-input100 validate-input m-b-23" data-validate = "Username harus diisi !!">
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "NIM harus diisi !!">
+						<span class="label-input100">NIM</span>
+						<input class="input100" type="text" placeholder="Masukan NIM" id="nim" name="nim">
+						<span class="focus-input100" data-symbol="&#9783;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Jurusan harus diisi !!">
+						<span class="label-input100">Jurusan</span>
+						<select class="form-control"  name="jurusan">
+								<option value="teknik informatika">Teknik Informatika</option>
+								<option value="Sistem Informasi">Sistem Informasi</option>
+								<option value="Teknik Komputer">Teknik Komputer</option>
+								<option value="Teknik Elektro">Teknik Elektro</option>
+								<option value="Teknik Arsitektur">Teknik Arsitektur</option>
+								<option value="Teknik Sipil">Teknik Sipil</option>
+								<option value="Teknik Industri">Teknik Industri</option>
+								<option value="Perencanaan Wilayah dan Kota">Perencanaan Wilayah dan Kota</option>
+								<option value="Akuntansi Komputerisasi">Akuntansi Komputerisasi</option>
+								<option value="Akuntansi S1">Akuntansi S1</option>
+								<option value="Akuntansi D3">Akuntansi D3</option>
+								<option value="Manajemen S1">Manajemen S1</option>
+								<option value="Manajemen D3">Manajemen D3</option>
+								<option value="Manajemen Pemasaran">Manajemen Pemasaran</option>
+								<option value="Keuangan dan Perbankan">Keuangan dan Perbankan</option>
+								<option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
+								<option value="Ilmu Pemerintahan">Ilmu Pemerintahan</option>
+								<option value="Hubungan Internasional">Hubungan Internasional</option>
+								<option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option>
+								<option value="Desain Interior">Desain Interior</option>
+								<option value="Sastra Inggris">Sastra Inggris</option>
+								<option value="Sastra Jepang">Sastra Jepang</option>
+								<option value="Hukum">Hukum</option>
+					 </select>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Telepon harus diisi !!">
+						<span class="label-input100">Telepon</span>
+						<input class="input100" type="text" placeholder="Masukan Nomor Telepon" id="tlp" name="tlp">
+						<span class="focus-input100" data-symbol="&#9743;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email harus diisi !!">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" placeholder="Masukan Email" id="email" name="email">
+						<span class="focus-input100" data-symbol="&#9993;"></span>
+					</div>
+
+					<br><br><br>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username harus diisi !!">
 						<span class="label-input100">Username</span>
 						<input class="input100" type="text" placeholder="Masukan Username Baru" id="user" name="user">
 

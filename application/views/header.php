@@ -52,13 +52,13 @@
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="nav-item active  ">
-        <a class="nav-link" href="<?php echo base_url();?>home/index"> <!-- blm dirubah-->
+        <a class="nav-link" href="<?php echo base_url();?>"> <!-- blm dirubah-->
           <i class="material-icons"></i>
           <p>Dashboard</p>
         </a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="<?php echo base_url();?>home/index">
+        <a class="nav-link" href="<?php echo base_url();?>">
           <i class="material-icons"></i>
           <p>Timeline</p>
         </a>

@@ -134,10 +134,19 @@ class forummodel extends CI_Model{
 		$n=$this->input->post('nama');
 		$u=$this->input->post('user');
 		$p=$this->input->post('pass');
+		$nim=$this->input->post('nim');
+		$jurusan=$this->input->post('jurusan');
+		$email=$this->input->post('email');
+		$tlp=$this->input->post('tlp');
+
 		$data=array(
 		'nama'=>$n,
 		'username'=>$u,
 		'password'=>$p,
+		'nim'=>$nim,
+		'jurusan'=>$jurusan,
+		'email'=>$email,
+		'tlp'=>$tlp
 		);
 		$this->db->trans_start();
 		$this->db->insert('fuser',$data);
