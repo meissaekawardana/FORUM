@@ -46,7 +46,8 @@
             <h4 class="card-title">Meissa Eka W</h4>
             <p class="card-description">
                     Sistem Informasi 2016</p>
-            <button type="submit" class="btn btn-primary pull-right" href="">Edit Profile</button>
+
+            <button type="submit" class="btn btn-primary pull-right" href="<?php echo base_url();?>home/edit_bio/<?php echo $this->session->userdata('USERID'); ?>">Edit Profile</button>
           </div>
     </div>
   <div class="sidebar-wrapper">

@@ -8,34 +8,25 @@
                   <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
+
+                  <?php
+        						if(!empty($forumDisplayFill)){
+        							foreach($forumDisplayFill as $data){ ?>
+
                   <form>
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" value="<?php echo $data->nama?>" id="nama" name="nama">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Nim</label>
-                          <input type="text" class="form-control">
+                          <label class="bmd-label-floating">Nama</label>
+                          <input type="text" class="form-control" value="<?php echo $data->nim?>" id="nim" name="nim">
                         </div>
                       </div>
-
-                        <div class="col-md-12">
-                          <div class="form-group">
-                          <label class="bmd-label-floating">Fakultas</label>
-                            <select class="form-control"  name="fakultas">
-                              &emsp; <option value="Teknik">Teknik</option>
-                              <option value="Ekonomi & Bisnis">Ekonomi & Bisnis</option>
-                              <option value="Sastra">Sastra</option>
-                              <option value="Fisip">FISIP</option>
-                              <option value="Desain">Desain</option>
-                              <option value="Hukum">Hukum</option>
-                            </select>
-                          </div>
-                        </div>
                         <div class="col-md-12">
                           <div class="form-group">
                             <label class="bmd-label-floating">Jurusan</label>
@@ -68,14 +59,26 @@
                         </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Nomor Telepon</label>
-                          <input type="text" class="form-control">
+                          <label class="bmd-label-floating">Telepon</label>
+                          <input type="text" class="form-control" value="<?php echo $data->tlp?>" id="tlp" name="tlp">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Email</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" value="<?php echo $data->email?>" id="email" name="email">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control" value="<?php echo $data->username?>" id="username" name="username">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Password</label>
+                          <input type="text" class="form-control" id="password" name="password">
                         </div>
                       </div>
                     </div>

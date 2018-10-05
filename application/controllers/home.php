@@ -178,6 +178,10 @@ class home extends CI_Controller {
   }
   function adduser(){
     $n=$this->input->post('nama');
+    $nim=$this->input->post('nim');
+    $jurusan=$this->input->post('jurusan');
+    $email=$this->input->post('email');
+    $tlp=$this->input->post('tlp');
     $u=$this->input->post('user');
     $p=$this->input->post('pass');
     $this->load->model('forummodel');
@@ -206,5 +210,21 @@ class home extends CI_Controller {
   function user_logout(){
     $this->session->sess_destroy();
     redirect (base_url().'home');
+  }
+
+  function edit_bio($id='')
+  {
+    $this->load->model('editbio',$NAMA,$PASS);
+
+    $this->load->model('forummodel');
+    $data['id']=$id;
+    $data['forumDisplay']=$this->forummodel->getForumdisplay(6);
+    $info=$this->forummodel->editbio($id);
+    $data['biodata']=$this->forummodel->editbio($id);
+
+    $this->load->view('header');
+    $this->load->view('nav_timeline');
+    $this->load->view('v_editprofil',$data);
+    $this->load->view('footer');
   }
 }
