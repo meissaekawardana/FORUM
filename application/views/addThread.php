@@ -7,12 +7,12 @@
 
 									<?php if(!empty($flashdata)) {echo '<div class="flashdata">'.$flashdata.'</div>';} ?>
 
-
                   <h4 class="card-title">Buat Post Baru</h4>
 
                 </div>
                 <div class="card-body">
                   <form method="POST" action="<?php echo base_url() ?>home/saveThread">
+                  <input type="hidden" name="idthread" id="idthread" value="<?php echo $id ?>">
                       <div class="col-md-12">
                         <div class="form-group">
                           <?php

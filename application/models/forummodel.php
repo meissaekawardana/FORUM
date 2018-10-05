@@ -40,7 +40,7 @@ class forummodel extends CI_Model{
 			}
 	}
 	function getDetailForum($id=''){
-	$query=$this->db->query("select  *,fuser.nama from fthread
+	$query=$this->db->query("select  * ,fuser.nama from fthread
 			left join fuser on fuser.id=fthread.userid
 			where fthread.id='$id' ");
 			 if ($query->num_rows() > 0) {
@@ -59,11 +59,11 @@ class forummodel extends CI_Model{
 			return $query->num_rows();
 	}
 	function getProp($id=''){
-		$query=$this->db->query("select  *,fdisplay.nama as namaforum from fthread
-		left join fdisplay on fdisplay.id=fthread.idforum
-		where idforum='$id'");
-		return $query->row();
-	}
+	$query=$this->db->query("select  *,fdisplay.nama as namaforum from fthread
+	left join fdisplay on fdisplay.id=fthread.idforum
+	where idforum='$id'");
+	return $query->row();
+}
 
 	function saveThread(){
 		$idthread=$this->input->post('idthread');
@@ -164,5 +164,6 @@ class forummodel extends CI_Model{
 		 return $mdata;
 	 }
 	}
+}
 
 ?>
