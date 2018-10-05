@@ -1,111 +1,176 @@
-/*
-Navicat MySQL Data Transfer
+-- phpMyAdmin SQL Dump
+-- version 4.2.7.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 05, 2018 at 05:35 AM
+-- Server version: 5.5.39
+-- PHP Version: 5.4.31
 
-Source Server         : local
-Source Server Version : 50141
-Source Host           : localhost:3306
-Source Database       : simpleforum
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-Target Server Type    : MYSQL
-Target Server Version : 50141
-File Encoding         : 65001
 
-Date: 2013-11-10 00:15:37
-*/
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
-SET FOREIGN_KEY_CHECKS=0;
+--
+-- Database: `simpleforum`
+--
 
--- ----------------------------
--- Table structure for `fcontent`
--- ----------------------------
-DROP TABLE IF EXISTS `fcontent`;
-CREATE TABLE `fcontent` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fcontent`
+--
+
+CREATE TABLE IF NOT EXISTS `fcontent` (
+`id` int(11) NOT NULL,
   `idforum` int(11) DEFAULT NULL,
   `idthread` int(11) DEFAULT NULL,
   `user` int(11) DEFAULT NULL,
   `isi` text,
-  `tanggal` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  `tanggal` date DEFAULT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
--- ----------------------------
--- Records of fcontent
--- ----------------------------
-INSERT INTO `fcontent` VALUES ('1', null, '1', '1', 'Muantabssss', null);
-INSERT INTO `fcontent` VALUES ('2', null, '1', '0', 'Hahay', null);
-INSERT INTO `fcontent` VALUES ('3', null, '1', '0', 'Hahay Masa Sih', null);
-INSERT INTO `fcontent` VALUES ('4', null, '3', '0', 'Wah Enak Tuh Ayam Gan', null);
-INSERT INTO `fcontent` VALUES ('5', null, '3', '0', 'Masa Sih', null);
-INSERT INTO `fcontent` VALUES ('6', null, '5', '0', 'Makan Donk', null);
-INSERT INTO `fcontent` VALUES ('7', null, '3', '4', 'Mana Hayam Urang', null);
-INSERT INTO `fcontent` VALUES ('8', null, '6', '4', 'Buah Beungeut Sia', null);
-INSERT INTO `fcontent` VALUES ('9', null, '6', '4', 'asd', '2013-11-09');
-INSERT INTO `fcontent` VALUES ('10', null, '4', '4', 'Ane Kagak tau Gan ', '2013-11-10');
+--
+-- Dumping data for table `fcontent`
+--
 
--- ----------------------------
--- Table structure for `fdisplay`
--- ----------------------------
-DROP TABLE IF EXISTS `fdisplay`;
-CREATE TABLE `fdisplay` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+INSERT INTO `fcontent` (`id`, `idforum`, `idthread`, `user`, `isi`, `tanggal`) VALUES
+(21, NULL, 23, 5, 'komen wew', '2018-10-04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fdisplay`
+--
+
+CREATE TABLE IF NOT EXISTS `fdisplay` (
+`id` int(11) NOT NULL,
   `nama` varchar(50) DEFAULT NULL,
-  `urutan` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+  `urutan` int(11) DEFAULT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
--- ----------------------------
--- Records of fdisplay
--- ----------------------------
-INSERT INTO `fdisplay` VALUES ('1', 'lounge', '1');
-INSERT INTO `fdisplay` VALUES ('2', 'Komputer', '2');
-INSERT INTO `fdisplay` VALUES ('3', 'Joke', '3');
-INSERT INTO `fdisplay` VALUES ('4', 'Politik', '4');
-INSERT INTO `fdisplay` VALUES ('5', 'Budaya', '5');
-INSERT INTO `fdisplay` VALUES ('6', 'Hoby', '6');
-INSERT INTO `fdisplay` VALUES ('7', 'Stuff', '7');
-INSERT INTO `fdisplay` VALUES ('8', 'AMH', '8');
+--
+-- Dumping data for table `fdisplay`
+--
 
--- ----------------------------
--- Table structure for `fthread`
--- ----------------------------
-DROP TABLE IF EXISTS `fthread`;
-CREATE TABLE `fthread` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+INSERT INTO `fdisplay` (`id`, `nama`, `urutan`) VALUES
+(1, 'Teknik dan Ilmu Komputer', 1),
+(2, 'Ekonomi dan Bisnis', 2),
+(3, 'Sastra', 3),
+(4, 'Ilmu Sosial dan Pemerintahan', 4),
+(5, 'Desain', 5),
+(6, 'Hukum', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fthread`
+--
+
+CREATE TABLE IF NOT EXISTS `fthread` (
+`id` int(11) NOT NULL,
   `idforum` int(11) DEFAULT NULL,
   `judul` varchar(255) DEFAULT NULL,
   `isi` text,
   `tanggal` date DEFAULT NULL,
   `userid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `type` varchar(50) NOT NULL,
+  `matkul` varchar(50) NOT NULL,
+  `datementor` date NOT NULL,
+  `deadline` date NOT NULL,
+  `feemin` varchar(50) NOT NULL,
+  `feemax` varchar(50) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
--- ----------------------------
--- Records of fthread
--- ----------------------------
-INSERT INTO `fthread` VALUES ('1', '1', 'Makan cau', 'Wah Muantabs', '2013-11-09', '1');
-INSERT INTO `fthread` VALUES ('3', '1', 'Makan Ayam', 'Gan Enak Loh Ayamnya', null, '0');
-INSERT INTO `fthread` VALUES ('2', '1', 'Orang GAntenk', 'Purchasing a template license for 8.00 GBP (at time of writing around 12 USD) gives you the right to remove any branding including links, logos and source tags relating to ZyPOP. As well as waiving the attribution requirement, your payment will also help us provide continued support for users as well as creating new web templates. Find out more about how to buy at the licensing page on our website which can be accessed at', '2013-11-12', '2');
-INSERT INTO `fthread` VALUES ('4', '2', 'Harga Komputer', 'Gan Berapa Harga CPU SEKARANG', null, '0');
-INSERT INTO `fthread` VALUES ('5', '1', 'Makan Saya', 'Ok Boleh Deh', null, '0');
-INSERT INTO `fthread` VALUES ('6', '3', 'Buah Apa YAng GAnteng', 'Buah Apa YAng GAnteng', null, '4');
+--
+-- Dumping data for table `fthread`
+--
 
--- ----------------------------
--- Table structure for `fuser`
--- ----------------------------
-DROP TABLE IF EXISTS `fuser`;
-CREATE TABLE `fuser` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+INSERT INTO `fthread` (`id`, `idforum`, `judul`, `isi`, `tanggal`, `userid`, `type`, `matkul`, `datementor`, `deadline`, `feemin`, `feemax`) VALUES
+(23, 0, 'wew', 'desk wew', NULL, 5, 'Jasa Mengajar', 'wew', '2018-09-18', '2018-10-09', '10000', '10000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fuser`
+--
+
+CREATE TABLE IF NOT EXISTS `fuser` (
+`id` int(11) NOT NULL,
   `nama` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `nim` int(10) NOT NULL,
+  `jurusan` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tlp` varchar(50) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
--- ----------------------------
--- Records of fuser
--- ----------------------------
-INSERT INTO `fuser` VALUES ('1', 'Malik', 'user', 'user');
-INSERT INTO `fuser` VALUES ('2', 'user', 'user', 'user');
-INSERT INTO `fuser` VALUES ('3', 'user', 'user', 'user');
-INSERT INTO `fuser` VALUES ('4', 'user', 'user2', 'user');
+--
+-- Dumping data for table `fuser`
+--
+
+INSERT INTO `fuser` (`id`, `nama`, `username`, `password`, `nim`, `jurusan`, `email`, `tlp`) VALUES
+(2, 'meissa', 'meissa', 'meissa', 10516652, 'Sistem Informasi', 'Meissaeka66@gmail.com', '085797953068'),
+(1, 'admin', 'admin', 'admin1', 10516001, 'Sistem Informasi', 'admin@gmail.com', '08123456789');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fcontent`
+--
+ALTER TABLE `fcontent`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `fdisplay`
+--
+ALTER TABLE `fdisplay`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `fthread`
+--
+ALTER TABLE `fthread`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `fuser`
+--
+ALTER TABLE `fuser`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fcontent`
+--
+ALTER TABLE `fcontent`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `fdisplay`
+--
+ALTER TABLE `fdisplay`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `fthread`
+--
+ALTER TABLE `fthread`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT for table `fuser`
+--
+ALTER TABLE `fuser`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

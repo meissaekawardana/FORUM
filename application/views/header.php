@@ -4,11 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/login/fonts/iconic/css/material-design-iconic-font.min.css">
-
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/fonts/gloria-hallelujah/GloriaHallelujah.ttf">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/login/fonts/iconic/css/material-design-iconic-font.min.css">
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url();?>assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -47,7 +45,7 @@
             <p class="card-description">
                     Sistem Informasi 2016</p>
 
-            <button type="submit" class="btn btn-primary pull-right" href="<?php echo base_url();?>home/edit_bio/<?php echo $this->session->userdata('USERID'); ?>">Edit Profile</button>
+            <button type="submit" class="btn btn-primary pull-right" href="<?php echo base_url();?>home/edit_bio/2">&#9998; Edit Profile</button>
           </div>
     </div>
   <div class="sidebar-wrapper">
@@ -55,27 +53,30 @@
       <li class="nav-item active  ">
         <a class="nav-link" href="<?php echo base_url();?>"> <!-- blm dirubah-->
           <i class="material-icons"></i>
+          <i class="material-icons">dashboard</i>
           <p>Dashboard</p>
         </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="<?php echo base_url();?>">
-          <i class="material-icons"></i>
+          <i class="material-icons">timeline</i>
           <p>Timeline</p>
         </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="./tables.html">
-          <i class="material-icons"></i>
+          <i class="material-icons">content_paste</i>
           <p>Kerjaan Ku</p>
         </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="<?php echo base_url();?>home/user_logout">
+          <i class="material-icons">logout</i>
           <p>Logout</p>
         </a>
       </li>
       <li class="nav-item "><a  class="nav-link" href="<?php echo base_url();?>home/user_login">
+        <i class="material-icons">login</i>
         <p>Login</p>
       </a></li>
     </ul>

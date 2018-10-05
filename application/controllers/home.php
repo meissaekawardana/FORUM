@@ -214,8 +214,6 @@ class home extends CI_Controller {
 
   function edit_bio($id='')
   {
-    $this->load->model('editbio',$NAMA,$PASS);
-
     $this->load->model('forummodel');
     $data['id']=$id;
     $data['forumDisplay']=$this->forummodel->getForumdisplay(6);
