@@ -154,20 +154,15 @@ class forummodel extends CI_Model{
 		redirect (base_url().'home/user_login/');
 	}
 
-	function editbio($NAMA,$PASS)
+	function editbio($id='')
 	{
-		$query=$this->db->query("select  * from fuser where username='$NAMA' and password='$PASS'");
-		$cek=$query->num_rows();
-		if($cek==1){
-			$query->row();
-			return $query->row();
-		} else {
-			$data=$query->row();
-			$datac=array('LOGIN'=>TRUE,'NAMA'=>$data->nama,'USERID'=>$data->id,'STATUS_LOGIN'=>"ANDA SUKSES LOGIN", 'PASS'=>$data->password);
-			$this->session->set_userdata($datac);
-			redirect (base_url().'home');
-		}
-		}
+		$query=$this->db->query("select  * from fuser where id=''$id'");
+		if ($query->num_rows() > 0) {
+		 foreach ($query->result() as $data) {
+			 $mdata[]=$data;
+		 }
+		 return $mdata;
+	 }
 	}
 
 ?>
