@@ -154,15 +154,30 @@ class forummodel extends CI_Model{
 		redirect (base_url().'home/user_login/');
 	}
 
-	function editbio($id='')
+	function editbio($where,$table)
 	{
-		$query=$this->db->query("select * from fuser where id='$id'");
-		if ($query->num_rows() > 0) {
-		 foreach ($query->result() as $data) {
-			 $mdata[]=$data;
-		 }
-		 return $mdata;
-	 }
+		function edit_data(){
+			return $this->db->get_where($table,$where);
+}
+
+		$u=$this->input->get('user');
+		$p=$this->input->get('pass');
+		$query=$this->db->query("select  * from fuser where username='$u' and password='$p'");
+		$cek=$query->num_rows();
+		if($cek==0){
+			echo"<script>alert('Data Tidak Ditemukan');</script>";
+			redirect (base_url().'home/user_login/');
+		} else {
+			$data=$query->row();
+			$datac=array('LOGIN'=>TRUE,'NAMA'=>$data->nama,'USERID'=>$data->id,'STATUS_LOGIN'=>"ANDA SUKSES LOGIN", 'PASS'=>$data->password);
+			$this->session->set_userdata($datac);
+			redirect (base_url().'home');
+		}
+	}
+
+	function update_bio($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
 	}
 }
 

@@ -9,22 +9,20 @@
                 </div>
                 <div class="card-body">
 
-                  <?php
-        						if(!empty($forumDisplayFill)){
-        							foreach($forumDisplayFill as $data){ ?>
-
-                  <form method="POST" action="<?php echo base_url() ?>home/">>
+                  <?php foreach($user as $u){ ?>
+                    <input type="hidden" name="id" value="<?php echo $u->id ?>">
+                  <form method="POST" action="<?php echo base_url() ?>home/update_bio">>
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama</label>
-                          <input type="text" class="form-control" value="<?php echo $data->nama?>" id="nama" name="nama">
+                          <input type="text" class="form-control" value="<?php echo $u->nama?>" id="nama" name="nama">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama</label>
-                          <input type="text" class="form-control" value="<?php echo $data->nim?>" id="nim" name="nim">
+                          <input type="text" class="form-control" value="<?php echo $u->nim?>" id="nim" name="nim">
                         </div>
                       </div>
                         <div class="col-md-12">
@@ -60,19 +58,19 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Telepon</label>
-                          <input type="text" class="form-control" value="<?php echo $data->tlp?>" id="tlp" name="tlp">
+                          <input type="text" class="form-control" value="<?php echo $u->tlp?>" id="tlp" name="tlp">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Email</label>
-                          <input type="text" class="form-control" value="<?php echo $data->email?>" id="email" name="email">
+                          <input type="text" class="form-control" value="<?php echo $u->email?>" id="email" name="email">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control" value="<?php echo $data->username?>" id="username" name="username">
+                          <input type="text" class="form-control" value="<?php echo $u->username?>" id="username" name="username">
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -84,7 +82,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary pull-right">Update Biodata</button>
                     <div class="clearfix"></div>
-                    <?php } ?>
+                  <?php }  ?>
                   </form>
                 </div>
               </div>

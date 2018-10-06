@@ -3,6 +3,9 @@
 class home extends CI_Controller {
 
 
+ $this->CI = & get_instance();
+ $this->CI->load->model('forummodel');
+
   var $limit=10;
   var $offset=10;
   function index($limit='',$offset=''){
@@ -215,15 +218,42 @@ class home extends CI_Controller {
 
   function edit_bio($id)
   {
-    $this->load->model('forummodel');
-    $data['id']=$id;
-    $data['forumDisplay']=$this->forummodel->getForumdisplay(6);
-    $info=$this->forummodel->editbio($id);
-    $data['biodata']=$this->forummodel->editbio($id);
+
+   $where = array('id' => $id);
+   $data['user'] = $this->forummodel->edit_bio($where,'fuser')->result();
 
     $this->load->view('header');
     $this->load->view('nav_timeline');
     $this->load->view('v_editprofil',$data);
     $this->load->view('footer');
+  }
+
+  function update_bio(){
+    $nama=$this->input->post('nama');
+    $nim=$this->input->post('nim');
+    $jurusan=$this->input->post('jurusan');
+    $email=$this->input->post('email');
+    $tlp=$this->input->post('tlp');
+    $username=$this->input->post('username');
+    $password=$this->input->post('password');
+
+
+  	$data = array(
+  		'nama' => $nama,
+      'nim'=>$nim,
+      'jurusan'=>$jurusan,
+      'email'=>$email,
+      'tlp'=>$tlp,
+      'username'=>$username,
+      'password'=>$password
+  	);
+
+  	$where = array(
+  		'id' => $id
+  	);
+
+    $this->load->model('forummodel');
+  	$this->forummodel->update_bio($where,$data,'fuser');
+  	redirect('home/index');
   }
 }
