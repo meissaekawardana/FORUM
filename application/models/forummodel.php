@@ -156,7 +156,7 @@ class forummodel extends CI_Model{
 
 	function editbio($id='')
 	{
-		$query=$this->db->query("select  * from fuser where id=''$id'");
+		$query=$this->db->query("select * from fuser where id='$id'");
 		if ($query->num_rows() > 0) {
 		 foreach ($query->result() as $data) {
 			 $mdata[]=$data;

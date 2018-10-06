@@ -117,7 +117,6 @@ class home extends CI_Controller {
   function detailThread($id='',$limit='',$offset=''){
     $this->load->model('forummodel');
     $data['id']=$id;
-    $data['forumDisplay']=$this->forummodel->getForumdisplay(6);
     $data['forumDisplayFill']=$this->forummodel->getDetailForum($id);
     /* VAGINATION */
     if($limit==''){ $limit = 0; $offset=5 ;}
@@ -133,6 +132,7 @@ class home extends CI_Controller {
     $this->pagination->initialize($config);
     /*---*/
     $data['forumDisplayFillComment']=$this->forummodel->getFcontentComment($limit,$offset,$id);
+    $data['forumDisplay']=$this->forummodel->getForumdisplay(6);
     $this->load->view('header');
     $this->load->view('nav_timeline');
     $this->load->view('fdetail',$data);
@@ -149,6 +149,7 @@ class home extends CI_Controller {
       $data['forumDisplay']=$this->forummodel->getForumdisplay(6);
       $info=$this->forummodel->getProp($idthread);
       $data['judul']=$info->judul;
+      $data['id']=$info->idforum;
       $this->load->view('header');
       $this->load->view('nav_timeline');
       $this->load->view('addComment',$data);
@@ -212,7 +213,7 @@ class home extends CI_Controller {
     redirect (base_url().'home');
   }
 
-  function edit_bio($id='')
+  function edit_bio($id)
   {
     $this->load->model('forummodel');
     $data['id']=$id;

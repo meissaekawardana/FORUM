@@ -45,7 +45,7 @@
             <p class="card-description">
                     Sistem Informasi 2016</p>
 
-            <button type="submit" class="btn btn-primary pull-right" href="<?php echo base_url();?>home/edit_bio/2">&#9998; Edit Profile</button>
+            <a type="button" class="btn btn-primary pull-right" href="<?php echo base_url();?>home/edit_bio/2">&#9998; Edit Profile</a>
           </div>
     </div>
   <div class="sidebar-wrapper">

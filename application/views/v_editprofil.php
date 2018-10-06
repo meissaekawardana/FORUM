@@ -13,7 +13,7 @@
         						if(!empty($forumDisplayFill)){
         							foreach($forumDisplayFill as $data){ ?>
 
-                  <form>
+                  <form method="POST" action="<?php echo base_url() ?>home/">>
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
@@ -30,7 +30,7 @@
                         <div class="col-md-12">
                           <div class="form-group">
                             <label class="bmd-label-floating">Jurusan</label>
-                            <select class="form-control"  name="jurusan">
+                            <select class="form-control" id="jurusan" name="jurusan">
                                 <option value="teknik informatika">Teknik Informatika</option>
                                 <option value="Sistem Informasi">Sistem Informasi</option>
                                 <option value="Teknik Komputer">Teknik Komputer</option>
@@ -78,12 +78,13 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Password</label>
-                          <input type="text" class="form-control" id="password" name="password">
+                          <input type="password" class="form-control" id="password" name="password">
                         </div>
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary pull-right">Update Biodata</button>
                     <div class="clearfix"></div>
+                    <?php } ?>
                   </form>
                 </div>
               </div>
@@ -92,7 +93,7 @@
               <div class="card card-profile">
                 <div class="card-avatar">
                   <a href="#pablo">
-                    <img class="img" src="<?php echo base_url();?>assets/dass/assets/img/faces/marc.jpg" />
+                    <img class="img" src="<?php echo base_url();?>assets/img/faces/marc.jpg" />
                   </a>
                 </div>
                 <div class="card-body">
@@ -104,40 +105,3 @@
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>

@@ -8,11 +8,15 @@
 					<?php
 						if(!empty($forumDisplay)){
 							foreach($forumDisplay as $row){
-								if($row->id == $id){
-									echo $row->nama;
-								}
+								if(!empty($forumDisplayFill)){
+										foreach($forumDisplayFill as $data){
+											if($row->id == $data->id){
+												echo $row->nama;
 											}
-										}
+												}
+													}
+														}
+															}
 										?>
 					</h3>
 				</div>
@@ -35,8 +39,7 @@
 									Type Tugas:<label><?php echo $data->type ?></label><br>
 									Deadline Tugas:<label><?php echo $data->deadline ?></label><br>
 									Matkul:<label><?php echo $data->matkul ?></label><br>
-									Fee Minimum:<label>Rp. <?php echo $data->feemin ?></label><br>
-									Fee Maksimum:<label>Rp. <?php echo $data->feemax ?></label><br>
+									Fee : <label>Rp. <?php echo $data->feemin ?></label> - <label>Rp. <?php echo $data->feemax ?></label><br>
 									Deskripsi : <label><?php echo $data->isi?></label>
 									</td>
 								</tr>
